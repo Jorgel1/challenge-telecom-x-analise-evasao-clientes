@@ -1,34 +1,37 @@
 # 📊 Previsão de Churn — Telecom X
 
 ## 📌 Visão Geral
-
-Este projeto tem como objetivo prever a evasão de clientes (**churn**) de uma empresa de telecomunicações, utilizando técnicas de **Machine Learning**. A solução foi desenvolvida com foco em:
-
-- Análise exploratória
-- Preparação de dados
-- Escolha e avaliação de modelos
-- Geração de insights para retenção de clientes
+Este projeto tem como objetivo prever a evasão de clientes (churn) de uma empresa de telecomunicações, utilizando técnicas de *machine learning*. A solução foi desenvolvida com foco na análise exploratória, preparação de dados, escolha de modelo e avaliação preditiva.
 
 ---
 
 ## 🎯 Objetivo
+**Telecom X – Parte 2: Prevendo Churn**
 
-Você foi contratado como assistente de análise de dados na **Telecom X** e fará parte do projeto **"Churn de Clientes"**.  
-A empresa enfrenta um alto índice de cancelamentos e precisa entender os fatores que levam à perda de clientes.
+## 🎯 Missão
+Sua nova missão é desenvolver modelos preditivos capazes de prever quais clientes têm maior chance de cancelar seus serviços.
 
-Seu desafio será:
+A empresa quer antecipar o problema da evasão, e cabe a você construir um pipeline robusto para essa etapa inicial de modelagem.
 
-- Coletar, tratar e analisar os dados
-- Utilizar Python e suas principais bibliotecas
-- Auxiliar a equipe de Data Science na criação de modelos preditivos
-- Gerar estratégias para reduzir a evasão de clientes
+---
 
-### 🧪 O que você vai praticar:
+## 🧠 Objetivos do Desafio
 
-- ✅ Importar e manipular dados de uma API de forma eficiente  
-- ✅ Aplicar conceitos de ETL (Extração, Transformação e Carga)  
-- ✅ Criar visualizações estratégicas para identificar padrões e tendências  
-- ✅ Realizar uma Análise Exploratória de Dados (EDA) e gerar insights  
+- Preparar os dados para a modelagem (tratamento, *encoding*, normalização)
+- Realizar análise de correlação e seleção de variáveis
+- Treinar dois ou mais modelos de classificação
+- Avaliar o desempenho dos modelos com métricas
+- Interpretar os resultados, incluindo a importância das variáveis
+- Criar uma conclusão estratégica apontando os principais fatores que influenciam a evasão
+
+---
+
+## 🧰 O que você vai praticar
+
+✅ Pré-processamento de dados para Machine Learning  
+✅ Construção e avaliação de modelos preditivos  
+✅ Interpretação dos resultados e entrega de insights  
+✅ Comunicação técnica com foco estratégico
 
 ---
 
@@ -39,36 +42,37 @@ Seu desafio será:
 3. Tratamento de variáveis categóricas  
 4. Normalização de dados  
 5. Construção e avaliação de modelos  
-6. Exportação do modelo final  
+6. Exportação do modelo final
 
 ---
 
 ## 🤖 Modelos Avaliados
 
-### 1. **Regressão Logística**
+### 1. Regressão Logística
 - **Accuracy:** 79,35%  
 - **Precision:** 63,52%  
 - **Recall:** 52,14%  
 - **F1 Score:** 57,27%  
-- **ROC AUC:** 0,8432  
+- **ROC AUC:** 0,8432
 
-### 2. **Random Forest**
+### 2. Random Forest
 - **Accuracy:** 78,14%  
 - **Precision:** 61,87%  
 - **Recall:** 45,99%  
 - **F1 Score:** 52,76%  
-- **ROC AUC:** 0,8129  
+- **ROC AUC:** 0,8129
 
-> 🔎 **Conclusão:** A **Regressão Logística** apresentou melhor performance geral, com destaque para o **Recall** e a **área sob a curva ROC**, sendo escolhida como modelo final.
+### 🔎 Conclusão:
+A **Regressão Logística** apresentou melhor performance geral, com destaque para o *Recall* e a área sob a curva ROC, sendo escolhida como modelo final.
 
 ---
 
 ## 📌 Principais Variáveis Relevantes
 
-- Tipo de contrato (mensal → maior churn)
-- Método de pagamento (boleto e débito automático → maior churn)
-- Adesão a serviços adicionais (ausência de suporte técnico ou segurança → maior churn)
-- Tipo de serviço de internet
+- Tipo de contrato (mensal → maior churn)  
+- Método de pagamento (boleto e débito automático → maior churn)  
+- Adesão a serviços adicionais (ausência de suporte técnico ou segurança → maior churn)  
+- Tipo de serviço de internet  
 - Valor mensal da fatura
 
 ---
@@ -77,7 +81,7 @@ Seu desafio será:
 
 - Incentivar contratos de maior duração (trimestral/anual)  
 - Oferecer pacotes com serviços de segurança e suporte  
-- Monitorar mensalmente os clientes com maior risco e agir com campanhas direcionadas  
+- Monitorar mensalmente os clientes com maior risco e agir com campanhas direcionadas
 
 ---
 
