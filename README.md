@@ -1,94 +1,83 @@
-# 📊 Previsão de Churn — Telecom X
+# 📊 Projeto Churn de Clientes – Telecom X
 
-## 📌 Visão Geral
-Este projeto tem como objetivo prever a evasão de clientes (churn) de uma empresa de telecomunicações, utilizando técnicas de *machine learning*. A solução foi desenvolvida com foco na análise exploratória, preparação de dados, escolha de modelo e avaliação preditiva.
-
----
-
-## 🎯 Objetivo
-**Telecom X – Parte 2: Prevendo Churn**
-
-## 🎯 Missão
-Sua nova missão é desenvolver modelos preditivos capazes de prever quais clientes têm maior chance de cancelar seus serviços.
-
-A empresa quer antecipar o problema da evasão, e cabe a você construir um pipeline robusto para essa etapa inicial de modelagem.
+Bem-vindo ao projeto de análise de evasão de clientes (Churn) da empresa **Telecom X**. Este repositório contém a análise exploratória realizada sobre os dados de clientes da empresa com o objetivo de entender os principais fatores que contribuem para o cancelamento dos serviços.
 
 ---
 
-## 🧠 Objetivos do Desafio
+## 📌 Objetivo
 
-- Preparar os dados para a modelagem (tratamento, *encoding*, normalização)
-- Realizar análise de correlação e seleção de variáveis
-- Treinar dois ou mais modelos de classificação
-- Avaliar o desempenho dos modelos com métricas
-- Interpretar os resultados, incluindo a importância das variáveis
-- Criar uma conclusão estratégica apontando os principais fatores que influenciam a evasão
+A **Telecom X** tem enfrentado um alto índice de cancelamento de clientes. Este projeto tem como objetivo analisar os dados fornecidos pela empresa, tratar as inconsistências e aplicar técnicas de **Análise Exploratória de Dados (EDA)** para extrair insights valiosos sobre o comportamento dos clientes que evadem. 
 
 ---
 
-## 🧰 O que você vai praticar
+## 🛠️ Tecnologias Utilizadas
 
-✅ Pré-processamento de dados para Machine Learning  
-✅ Construção e avaliação de modelos preditivos  
-✅ Interpretação dos resultados e entrega de insights  
-✅ Comunicação técnica com foco estratégico
-
----
-
-## 🧩 Etapas do Projeto
-
-1. Importação e limpeza de dados  
-2. Análise exploratória (EDA)  
-3. Tratamento de variáveis categóricas  
-4. Normalização de dados  
-5. Construção e avaliação de modelos  
-6. Exportação do modelo final
+- Python 3.10+
+- Pandas
+- NumPy
+- Matplotlib & Seaborn
+- Jupyter Notebook
 
 ---
 
-## 🤖 Modelos Avaliados
+## 📂 Estrutura do Repositório
 
-### 1. Regressão Logística
-- **Accuracy:** 79,35%  
-- **Precision:** 63,52%  
-- **Recall:** 52,14%  
-- **F1 Score:** 57,27%  
-- **ROC AUC:** 0,8432
-
-### 2. Random Forest
-- **Accuracy:** 78,14%  
-- **Precision:** 61,87%  
-- **Recall:** 45,99%  
-- **F1 Score:** 52,76%  
-- **ROC AUC:** 0,8129
-
-### 🔎 Conclusão:
-A **Regressão Logística** apresentou melhor performance geral, com destaque para o *Recall* e a área sob a curva ROC, sendo escolhida como modelo final.
+```bash
+├── Challenge_ETL_telecomX.ipynb              # Notebook com o pipeline de ETL e análise exploratória
+├── dataset/telecomx_data_gold.csv            # Pasta com os dados tratados 
+├── requirements.txt                          # Bibliotecas necessárias para rodar o projeto
+└── README.md                                 # Este arquivo
+```
 
 ---
 
-## 📌 Principais Variáveis Relevantes
+## 🔍 Etapas Realizadas
 
-- Tipo de contrato (mensal → maior churn)  
-- Método de pagamento (boleto e débito automático → maior churn)  
-- Adesão a serviços adicionais (ausência de suporte técnico ou segurança → maior churn)  
-- Tipo de serviço de internet  
-- Valor mensal da fatura
+### 1. **Importação e Tratamento dos Dados**
+- Extração de dados de uma API em formato JSON.
+- Normalização das colunas e correção de tipos de dados.
+- Preenchimento e tratamento de valores nulos.
+- Criação de novas features, como `Daily_Charges`.
+
+### 2. **Análise Exploratória de Dados (EDA)**
+- Análise da variável alvo `Churn`, que representa se o cliente evadiu ou não.
+- Geração de gráficos para entender o comportamento dos clientes por:
+  - Tipo de contrato
+  - Tempo de permanência (`tenure`)
+  - Serviços contratados
+  - Tipo de pagamento
+  - Fatura diária
+
+### 3. **Análise de Correlação**
+- Verificação da relação entre variáveis e a variável alvo.
+- Criação de mapa de calor e gráficos de dispersão.
 
 ---
 
-## 💡 Estratégias de Retenção Sugeridas
+## 📈 Principais Insights
 
-- Incentivar contratos de maior duração (trimestral/anual)  
-- Oferecer pacotes com serviços de segurança e suporte  
-- Monitorar mensalmente os clientes com maior risco e agir com campanhas direcionadas
+- Clientes com contratos mensais têm maior chance de evadir.
+- Menor tempo de permanência está fortemente relacionado ao churn.
+- A ausência de serviços como suporte técnico, backup e segurança online está associada ao cancelamento.
+- Clientes com faturas diárias mais altas também demonstram maior churn.
+- Cobrança eletrônica (Paperless Billing) também está relacionada a maior evasão.
 
 ---
 
-## 💾 Exportação do Modelo
+## ✅ Conclusões e Recomendações
 
-O modelo final foi salvo utilizando a biblioteca `joblib`:
+- **Incentivar contratos de longo prazo** com benefícios adicionais.
+- **Oferecer pacotes combinados** de serviços essenciais com desconto.
+- **Foco em retenção nos primeiros meses de uso**, pois o churn ocorre majoritariamente no início do ciclo.
+- **Criar campanhas de reengajamento** para perfis com alto risco de churn.
 
-```python
-import joblib
-joblib.dump(modelo_lr, 'modelo_regressao_logistica.pkl')
+---
+
+## 💡 Próximos Passos
+
+- Aplicar **modelos preditivos** após balanceamento da variável `Churn`.
+- Explorar técnicas como **SMOTE** e validação cruzada.
+- Construir dashboards interativos para acompanhamento contínuo de churn.
+
+---
+
